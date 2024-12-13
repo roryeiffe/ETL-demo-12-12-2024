@@ -1,11 +1,17 @@
 # ETL-demo-12-12-2024
 Quick demo to go over design patterns, commit messages, best practices using ETL
 
-## Requirements
+## 12/12 Requirements
 - Have a csv file (can use existing one or create your own)
 - Need some way to represent the data
 - Need a way to read data from an external file
 - Need code to convert the raw data to a Map/dictionary
+
+## 12/13 Requirements
+- Utilize the Singleton Design Pattern for both of your "util" classes/modules (CustomDataParser and CustomFileReader)
+  - In other words, instead of creating a new CustomFileReader every time we want to read from a file, re-use the same instance.
+- References:
+  - https://csharpindepth.com/articles/singleton 
 
 ## Best Practices to look out for:
 - Committing often and including descriptive messages
