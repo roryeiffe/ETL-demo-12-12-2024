@@ -8,6 +8,25 @@ import java.util.List;
 
 public class CustomFileReader {
 
+    // private instance of this class itself
+    private static CustomFileReader customFileReader;
+
+    // Make the constructor private so we can adhere to Singleton DP
+    private CustomFileReader() {
+        System.out.println("CustomFileReader Constructor");
+    }
+
+    // when we try to retrieve this instance from elsewhere
+    // Check if the object was already instantiated (if not, just create it)
+    public static CustomFileReader getCustomFileReader() {
+        if (customFileReader == null) {
+            // we can access the private constructor because we are in that class
+            customFileReader = new CustomFileReader();
+        }
+        // return the file reader either way
+        return customFileReader;
+    }
+
     /**
      *
      * @param filename - the name of the file to read data from

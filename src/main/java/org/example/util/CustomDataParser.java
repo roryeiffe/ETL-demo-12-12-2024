@@ -8,6 +8,10 @@ import java.util.Map;
 
 public class CustomDataParser {
 
+    public CustomDataParser() {
+        System.out.println("Custom Data Parser Constructor");
+    }
+
     /**
      *
      * @param inputs - a list of Strings. Each string is a representation of a Person
