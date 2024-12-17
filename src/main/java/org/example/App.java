@@ -18,14 +18,14 @@ public class App {
         CustomFileReader customFileReader = CustomFileReader.getCustomFileReader();
         List<String> input = customFileReader.readFile("input.csv");
 
-        CustomDataParser customDataParser = new CustomDataParser();
+        CustomDataParser customDataParser = CustomDataParser.getcustomDataParser();
         Map<Integer, Person> outputData = customDataParser.parseData(input);
         System.out.println(outputData);
 
         // Now, we read in the second data set:
         CustomFileReader customFileReader1 = CustomFileReader.getCustomFileReader();
         List<String> input2 = customFileReader1.readFile("input2.csv");
-        CustomDataParser customDataParser1 = new CustomDataParser();
+        CustomDataParser customDataParser1 = CustomDataParser.getcustomDataParser();
         Map<Integer, Person> map = customDataParser1.parseData(input2);
         System.out.println(map);
 

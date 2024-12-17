@@ -8,9 +8,20 @@ import java.util.Map;
 
 public class CustomDataParser {
 
-    public CustomDataParser() {
+    private static CustomDataParser customDataParser;
+
+    private CustomDataParser() {
         System.out.println("Custom Data Parser Constructor");
     }
+
+    public static CustomDataParser getcustomDataParser() {
+        if (customDataParser == null) {
+            // we can access the private constructor because we are in that class
+            customDataParser = new CustomDataParser();
+        }
+        // return the file reader either way
+        return customDataParser;
+    } 
 
     /**
      *
