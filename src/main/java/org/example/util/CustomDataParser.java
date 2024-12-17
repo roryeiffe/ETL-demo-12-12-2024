@@ -9,9 +9,11 @@ import java.util.Map;
 public class CustomDataParser {
 
     private static CustomDataParser customDataParser;
+    private CustomLogger customLogger;
 
     private CustomDataParser() {
-        System.out.println("Custom Data Parser Constructor");
+        customLogger = new CustomLogger("CustomDataParser.class");
+        customLogger.log("Custom Data Parser Instantiated");
     }
 
     public static CustomDataParser getcustomDataParser() {
@@ -35,9 +37,9 @@ public class CustomDataParser {
         for(String line: inputs) {
             // for each person, split based on the comma delimiter
             String [] fields = line.split(",");
-            int id = Integer.valueOf(fields[0]);
+            int id = Integer.parseInt(fields[0]);
             String name = fields[1];
-            int age = Integer.valueOf(fields[2]);
+            int age = Integer.parseInt(fields[2]);
             String city = fields[3];
             Person person = new Person(id, name, age, city);
             outputData.put(id, person);

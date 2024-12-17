@@ -10,10 +10,12 @@ public class CustomFileReader {
 
     // private instance of this class itself
     private static CustomFileReader customFileReader;
+    private CustomLogger customLogger;
 
     // Make the constructor private so we can adhere to Singleton DP
     private CustomFileReader() {
-        System.out.println("CustomFileReader Constructor");
+        customLogger = new CustomLogger("CustomFileReader.class");
+        customLogger.log("CustomFileReader Constructor");
     }
 
     // when we try to retrieve this instance from elsewhere
@@ -50,7 +52,6 @@ public class CustomFileReader {
             }
         }
         catch(IOException ioException) {
-            // TODO: make this a log statement
             ioException.printStackTrace();
         }
         return output;
