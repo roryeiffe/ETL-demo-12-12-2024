@@ -4,6 +4,7 @@ import org.example.models.Person;
 import org.example.util.CustomDataParser;
 import org.example.util.CustomFileReader;
 import org.example.util.CustomLogger;
+import org.example.util.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,9 @@ import java.util.Map;
  */
 public class App {
     public static void main(String[] args) {
-        CustomLogger customLogger = new CustomLogger("App.class", "out.log");
+        CustomLogger customLogger = LoggerFactory.getLogger("App.class");
+        CustomLogger customLogger1 = LoggerFactory.getLogger("App.class");
+//        CustomLogger customLogger2 = LoggerFactory.getLogger("App.class", "fileName");
 
         CustomFileReader customFileReader = CustomFileReader.getCustomFileReader();
         List<String> input = customFileReader.readFile("input.csv");

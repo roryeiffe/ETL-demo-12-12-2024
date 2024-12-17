@@ -10,10 +10,12 @@ public class CustomLogger {
     private String fileName = "";
 
     public CustomLogger(String className) {
+        System.out.println("Calling the Custom Logger constructor for the class: " + className);
         this.className = className;
     }
 
     public CustomLogger (String className, String fileName) {
+        System.out.println("Calling the Custom Logger constructor");
         this.className = className;
         this.fileName = fileName;
     }

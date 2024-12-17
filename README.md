@@ -11,7 +11,12 @@ Quick demo to go over design patterns, commit messages, best practices using ETL
 - Utilize the Singleton Design Pattern for both of your "util" classes/modules (CustomDataParser and CustomFileReader)
   - In other words, instead of creating a new CustomFileReader every time we want to read from a file, re-use the same instance.
 - References:
-  - https://csharpindepth.com/articles/singleton 
+  - https://csharpindepth.com/articles/singleton
+
+## 12/14 Requirements
+- Create a custom logger that takes in a class/module name and a file output destination
+- Next, create a factory that handles the creation logic of loggers (only one logger per class)
+- Bonus: Re-Factor Logger Factory to also take into account the file name
 
 ## Best Practices to look out for:
 - Committing often and including descriptive messages
