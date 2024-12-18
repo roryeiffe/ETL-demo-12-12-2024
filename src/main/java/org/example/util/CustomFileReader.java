@@ -14,7 +14,7 @@ public class CustomFileReader {
 
     // Make the constructor private so we can adhere to Singleton DP
     private CustomFileReader() {
-        customLogger = LoggerFactory.getLogger("CustomFileReader.class");
+        customLogger = LoggerFactory.getLogger("CustomFileReader.class", "");
         customLogger.log("CustomFileReader Constructor");
     }
 

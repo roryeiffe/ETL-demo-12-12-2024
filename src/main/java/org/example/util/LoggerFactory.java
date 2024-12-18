@@ -1,8 +1,7 @@
 package org.example.util;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The purpose of this factory class is to ensure that we never create
@@ -12,21 +11,24 @@ public class LoggerFactory {
     private LoggerFactory() {
 
     }
-    private static Map<String, CustomLogger> existingLoggers = new HashMap<>();
+    private static Set<CustomLogger> existingLoggers = new HashSet<>();
 
     /**
      * This method returns the logger associates with that className or creates a new one (if none exists for the class)
      * @param className - the className with which the logger is associated
      * @return - the desired logger object
      */
-    public static CustomLogger getLogger(String className) {
-        // if this className already has a corresponding logger, just return that logger
-        if(existingLoggers.containsKey(className)) return existingLoggers.get(className);
-        else {
-            CustomLogger logger = new CustomLogger(className);
-            existingLoggers.put(className, logger);
-            return logger;
+    public static CustomLogger getLogger(String className, String fileName) {
+        // create a "dummy" logger to use in matching against the set of existing loggers
+        // TODO: ensure this logger gets cleaned up
+        CustomLogger customLogger = new CustomLogger(className, fileName);
+        if(!existingLoggers.contains(customLogger)) existingLoggers.add(customLogger);
+
+        // return logic
+        for(CustomLogger customLoggerItr: existingLoggers) {
+            if(customLoggerItr.equals(customLogger)) return customLoggerItr;
         }
+        return null;
     }
 
     // TODO: Implement a method that takes in a className and a fileName

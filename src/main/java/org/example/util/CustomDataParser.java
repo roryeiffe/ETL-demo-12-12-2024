@@ -12,7 +12,7 @@ public class CustomDataParser {
     private CustomLogger customLogger;
 
     private CustomDataParser() {
-        customLogger = LoggerFactory.getLogger("CustomDataParser.class");
+        customLogger = LoggerFactory.getLogger("CustomDataParser.class", "");
         customLogger.log("Custom Data Parser Instantiated");
     }
 

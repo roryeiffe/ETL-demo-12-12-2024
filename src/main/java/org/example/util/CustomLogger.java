@@ -15,7 +15,7 @@ public class CustomLogger {
     }
 
     public CustomLogger (String className, String fileName) {
-        System.out.println("Calling the Custom Logger constructor");
+        System.out.println("Calling the Custom Logger constructor for the class: " + className + " and the file: " + fileName);
         this.className = className;
         this.fileName = fileName;
     }
@@ -37,6 +37,7 @@ public class CustomLogger {
             }
         }
     }
+
 
 
 }
