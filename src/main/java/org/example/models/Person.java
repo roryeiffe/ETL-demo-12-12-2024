@@ -13,6 +13,22 @@ public class Person {
         this.city = city;
     }
 
+    public Person(Person person) {
+        this.id = person.id;
+        this.name = person.name;
+        this.age = person.age;
+        this.city = person.city;
+
+    }
+
+    /**
+     * Take the current Person instance and return an exact copy of it
+     * @return the clone of the object so that is has the same values but not the same reference
+     */
+    public Person clone() {
+        return new Person(this.id, this.name, this.age, this.city);
+    }
+
 
     public int getId() {
         return id;
