@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Objects;
 
 public class CustomLogger {
     private String className;
@@ -39,5 +40,33 @@ public class CustomLogger {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomLogger that = (CustomLogger) o;
+        // make sure that the fields match:
+        return Objects.equals(className, that.className) && Objects.equals(fileName, that.fileName);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(className, fileName);
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }

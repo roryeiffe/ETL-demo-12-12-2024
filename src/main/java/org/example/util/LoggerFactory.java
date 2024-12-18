@@ -19,16 +19,14 @@ public class LoggerFactory {
      * @return - the desired logger object
      */
     public static CustomLogger getLogger(String className, String fileName) {
-        // create a "dummy" logger to use in matching against the set of existing loggers
-        // TODO: ensure this logger gets cleaned up
-        CustomLogger customLogger = new CustomLogger(className, fileName);
-        if(!existingLoggers.contains(customLogger)) existingLoggers.add(customLogger);
-
         // return logic
         for(CustomLogger customLoggerItr: existingLoggers) {
-            if(customLoggerItr.equals(customLogger)) return customLoggerItr;
+            if(customLoggerItr.getClassName().equals(className) && customLoggerItr.getFileName().equals(fileName)) return customLoggerItr;
         }
-        return null;
+        // If we've reached this point in the code that means the logger doesn't exist yet:
+        CustomLogger customLogger = new CustomLogger(className, fileName);
+        existingLoggers.add(customLogger);
+        return customLogger;
     }
 
     // TODO: Implement a method that takes in a className and a fileName

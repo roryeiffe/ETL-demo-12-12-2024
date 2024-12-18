@@ -16,7 +16,11 @@ public class App {
     public static void main(String[] args) {
         CustomLogger customLogger = LoggerFactory.getLogger("App.class", "");
         CustomLogger customLogger1 = LoggerFactory.getLogger("App.class", "");
-        CustomLogger customLogger2 = LoggerFactory.getLogger("App.class", "fileName");
+        CustomLogger customLogger2 = LoggerFactory.getLogger("App.class", "out.log");
+
+        customLogger2.log("hello!");
+
+
 
         CustomFileReader customFileReader = CustomFileReader.getCustomFileReader();
         List<String> input = customFileReader.readFile("input.csv");
