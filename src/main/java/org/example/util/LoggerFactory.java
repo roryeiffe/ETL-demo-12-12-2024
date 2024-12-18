@@ -28,8 +28,4 @@ public class LoggerFactory {
         existingLoggers.add(customLogger);
         return customLogger;
     }
-
-    // TODO: Implement a method that takes in a className and a fileName
-    // Ensure that no two loggers can have the same className and fileName
-    // but for a given class, there could be multiple loggers as long as the point to different data sources
 }

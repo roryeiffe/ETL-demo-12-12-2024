@@ -13,10 +13,13 @@ Quick demo to go over design patterns, commit messages, best practices using ETL
 - References:
   - https://csharpindepth.com/articles/singleton
 
-## 12/14 Requirements
+## 12/17 Requirements
 - Create a custom logger that takes in a class/module name and a file output destination
 - Next, create a factory that handles the creation logic of loggers (only one logger per class)
 - Bonus: Re-Factor Logger Factory to also take into account the file name
+
+## 12/18 Requirements
+- Implement the Prototype design pattern for cloning instances of the Person Object
 
 ## Best Practices to look out for:
 - Committing often and including descriptive messages
