@@ -5,12 +5,14 @@ public class Player {
     private String specialization;
     // The tool is the dependency in this case, we could say that the Player class depends on the Tool interface
     private Tool tool;
+    private int power;
 
 
-    public Player(String name, String specialization, Tool tool) {
+    public Player(String name, String specialization, Tool tool, int power) {
         this.name = name;
         this.specialization = specialization;
         this.tool = tool;
+        this.power = power;
     }
 
     public String getName() {
@@ -36,6 +38,21 @@ public class Player {
     public void setTool(Tool tool) {
         this.tool = tool;
     }
+    public int getPower() {
+        return power;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+
+
+
+    public void useTool() {
+        System.out.print(this.name + " is using their tool: ");
+        this.tool.use();
+    }
 
 
     @Override
@@ -44,11 +61,7 @@ public class Player {
                 "name='" + name + '\'' +
                 ", specialization='" + specialization + '\'' +
                 ", tool=" + tool +
+                ", power=" + power +
                 '}';
-    }
-
-    public void useTool() {
-        System.out.print(this.name + " is using their tool: ");
-        this.tool.use();
     }
 }
